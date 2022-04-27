@@ -27,12 +27,11 @@ function App() {
 })
 	return (
 		<Router>
-		<Nav/>
 		<Routes>
 
 			{!user && (
 				<>
-				<Route path='/' element={<Auth />} />
+				<Route path='/' element={<Auth/>} />
 				<Route path='/Signup' element={< Signup/>}></Route>
 				<Route path='/Signin' element={< Signin/>}></Route>
 				</>
@@ -40,13 +39,15 @@ function App() {
 			{user && (
 				//other routes
 				<>
-				<Route path='/' element={< Home />}></Route>
-				<Route path='/outer' element={< Categories name="Outer"/>}></Route>
-				<Route path='/top' element={< Categories name="Top"/>}></Route>
-				<Route path='/bottom' element={< Categories name="Bottom"/>}></Route>
-				<Route path='/accessories' element={< Categories name="Accessories"/>}></Route>
-				<Route path='/dresses' element={< Categories name="Dresses"/>}></Route>
-				<Route path='/shoes' element={< Categories name="Shoes"/>}></Route> 
+				<Route 
+				path='/' 
+				element={ <> <Nav /> < Home /> </> }></Route>
+				<Route path='/outer' element={ <> <Nav /> < Categories name="Outer"/> </>}></Route>
+				<Route path='/top' element={ <> <Nav /> < Categories name="Top"/> </> }></Route>
+				<Route path='/bottom' element={ <> <Nav /> < Categories name="Bottom"/> </>}></Route>
+				<Route path='/accessories' element={ <> <Nav /> < Categories name="Accessories"/> </>}></Route>
+				<Route path='/dresses' element={ <> <Nav /> < Categories name="Dresses"/> </>}></Route>
+				<Route path='/shoes' element={ <> <Nav /> < Categories name="Shoes"/> </>}></Route> 
 				</>
 			)}
 			</Routes>

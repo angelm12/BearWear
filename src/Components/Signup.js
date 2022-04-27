@@ -4,7 +4,7 @@ import { createUserWithEmailAndPassword,
  } from "firebase/auth";
 import { auth } from "../firebase-config"
 import { useNavigate } from 'react-router-dom'
-
+import oski from "./oski.webp"
 function Signup() {
 
     const [registerEmail, setRegisterEmail] = useState("");
@@ -28,13 +28,15 @@ function Signup() {
 
 
     return (
-        <div className="flex flex-col">  
+        <div className="flex flex-col justify-center items-center mt-12">  
         
-            <div className="flex flex-col">
-                <div>Sign Up</div>
+            <div className="flex flex-col justify-center items-center mt-12">
+                <div className="flex flex-col justify-center items-center mt-12 text-3xl font-bold">Sign Up</div>
                 <input type="text" placeholder="Email" onChange={(e) => setRegisterEmail(e.target.value)}/>
-                <input type="text" placeholder="Password" onChange={(e) => setRegisterPw(e.target.value)}/>
+                <input type="password" placeholder="Password" onChange={(e) => setRegisterPw(e.target.value)}/>
                 <button onClick={register}>Submit</button>
+                <img class="h-60 w-150 p-2" src={oski}/>
+
             </div>
         </div>
     )

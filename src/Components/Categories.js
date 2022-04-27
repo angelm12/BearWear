@@ -52,33 +52,35 @@ function Categories(props){
         });
     }
 
-    function deleteFromFirebase(url) {
-        let pictureRef = ref(storage, url);
-        deleteObject(pictureRef).then(() => { // deletes from firebase
-        // FIX ME - delete from your local url array
+    // function deleteFromFirebase(url) {
+    //     let pictureRef = ref(storage, url);
+    //     deleteObject(pictureRef).then(() => { // deletes from firebase
+    //     // FIX ME - delete from your local url Delete
     
-    }).catch((error) => {
-        console.log(error);
-        });
-    };
+    // }).catch((error) => {
+    //     console.log(error);
+    //     });
+    // };
         
 
 
     return (
-    <div>
+    <div className= " flex flex-col justify-center items-center mt-12">
         <input type="file" onChange ={setFile} />
-
+        <div className="box-decoration-slice bg-gradient-to-r from-green-600 to-blue-500 text-white px-2 rounded-lg  shadow-inner">
         <button onClick={upload}> Upload </button> 
-
+        </div >
+        <div className="flex flex-col">
         {
             imageList.map(url => (
             (
-                <div>
+                <div className="flex flex-col h-60 w-60 ">
                     <img src = {url} />
                 </div>
             )
             ))
         }
+        </div>
     </div>
     )
 }

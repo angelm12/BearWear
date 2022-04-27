@@ -10,11 +10,14 @@ function Nav() {
         navigate("/")
     }
     return (
-        <div>
-            <div>
-            <Link to={"/Signup"}>BearWear</Link>
+        <div className="">
+            <div className=" p-2 text-3xl font-bold">
+            <Link to={"/"}>BearWear</Link>
             </div>
+            <div className="flex justify-end items-center text-2xl  pr-8 font-mono ">
             <button onClick={ logOut }>Log Out</button>
+            </div>
+           
         </div>
     )
 };
